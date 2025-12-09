@@ -1,15 +1,13 @@
 {
   "name": "kimidly-website",
   "version": "1.0.0",
-  "description": "Kimidly - AI-powered SEO gap analysis",
+  "type": "module",
   "scripts": {
-    "build": "mkdir -p dist && cp -r *.html *.xml *.txt .htaccess dist/ 2>/dev/null || true",
-    "start": "npx serve dist"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "engines": {
-    "node": ">=18"
-  },
-  "keywords": ["seo", "ai", "saas"],
-  "author": "Kimidly LLC",
-  "license": "MIT"
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
 }
