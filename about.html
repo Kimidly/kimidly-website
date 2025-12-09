@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Kimidly and Kimidly LLC. Created by Ivan Benoît Candon, a French freelance developer specializing in SaaS and SEO tools.">
+    <title>About Us | Kimidly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+                            400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+                            800: '#3730a3', 900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass border-b border-gray-200/50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25 transform group-hover:scale-105 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Kimidly</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">Home</a>
+                    <a href="pricing.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">Pricing</a>
+                    <a href="about.html" class="px-4 py-2 text-gray-900 bg-gray-100 rounded-lg font-medium">About</a>
+                    <a href="book.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="book.html" class="bg-primary-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-700 transition shadow-lg shadow-primary-500/25">
+                        Start Free Trial
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-20 pb-12 px-6 bg-gradient-to-b from-primary-50 to-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">About Us</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Building the future of SEO analysis</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                We're on a mission to make SEO accessible and actionable for every marketing team.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Team working" class="rounded-2xl shadow-xl">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Kimidly was created by <strong>Ivan Benoît Candon</strong>, a French freelance developer with years of experience building scalable web applications and understanding the complexities of search engine optimization.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        After spending countless hours manually analyzing competitors and struggling with fragmented SEO tools, Ivan identified a gap in the market for a simple, AI-powered solution that could deliver actionable insights in minutes—not hours.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">500+</div>
+                    <p class="text-gray-600">Marketing Teams</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">50K+</div>
+                    <p class="text-gray-600">Analyses Run</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">2020</div>
+                    <p class="text-gray-600">Founded</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-12 mb-20">
+                <h2 class="text-3xl font-bold mb-6">Kimidly LLC</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Kimidly operates under <strong>Kimidly LLC</strong>, a single-member LLC registered in the United States.
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><strong>Registered:</strong> July 30, 2020</li>
+                            <li><strong>EIN:</strong> 36-4965969</li>
+                            <li><strong>Location:</strong> Albuquerque, NM, USA</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 leading-relaxed">
+                            The company has shown consistent growth and is committed to providing innovative SEO solutions for businesses worldwide. We serve customers in over 30 countries and continue to expand our capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        We believe that SEO analysis shouldn't be complicated or expensive. Our mission is to provide marketers and e-commerce businesses with powerful, AI-driven insights that help them identify opportunities and improve their search engine rankings.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Whether you're a remote team, a growing startup, or an established agency, Kimidly is designed to be accessible, actionable, and affordable.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Technology</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">Natural Language Processing</strong>
+                                <p class="text-gray-600 text-sm mt-1">Understanding content context and search intent</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">Competitive Intelligence</strong>
+                                <p class="text-gray-600 text-sm mt-1">Real-time analysis of top-ranking competitors</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">Machine Learning</strong>
+                                <p class="text-gray-600 text-sm mt-1">Models trained on millions of successful SEO campaigns</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-6 bg-primary-600">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to try Kimidly?</h2>
+            <p class="text-xl text-primary-100 mb-8">Start your free trial and see the difference AI-powered SEO analysis can make.</p>
+            <a href="book.html" class="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition">
+                Start Free Trial
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-white">Kimidly</span>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+                    <a href="terms.html" class="hover:text-white transition">Terms</a>
+                    <a href="imprint.html" class="hover:text-white transition">Imprint</a>
+                </div>
+                <p class="text-sm text-gray-500">&copy; 2025 Kimidly LLC</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

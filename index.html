@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kimidly - AI-powered SEO gap analysis. Discover missing keywords, outrank competitors, and grow your organic traffic. Trusted by 500+ marketing teams.">
+    <meta name="keywords" content="SEO analyzer, AI SEO, keyword gap analysis, competitor analysis, e-commerce SEO, SaaS SEO tools">
+    <meta name="author" content="Kimidly LLC">
+    <meta property="og:title" content="Kimidly | AI-Powered SEO Gap Analysis">
+    <meta property="og:description" content="Discover missing keywords and outrank your competitors with AI-powered SEO analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kimidly.net">
+    <title>Kimidly | AI-Powered SEO Gap Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .mesh-gradient {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Announcement Bar -->
+    <div class="bg-primary-600 text-white text-center py-2 px-4 text-sm">
+        <span class="font-medium">🚀 New: Competitor tracking now available.</span>
+        <a href="book.html" class="underline ml-2 hover:no-underline">Book a demo →</a>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass border-b border-gray-200/50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25 transform group-hover:scale-105 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Kimidly</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">Home</a>
+                    <a href="pricing.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">Pricing</a>
+                    <a href="about.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">About</a>
+                    <a href="book.html" class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium">Contact</a>
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition font-medium flex items-center gap-1">
+                            Legal
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                            <a href="privacy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600">Privacy Policy</a>
+                            <a href="terms.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600">Terms of Service</a>
+                            <a href="imprint.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600">Imprint</a>
+                            <a href="cookies.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="book.html" class="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition">Log in</a>
+                    <a href="book.html" class="bg-primary-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-700 transition shadow-lg shadow-primary-500/25">
+                        Start Free Trial
+                    </a>
+                </div>
+                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4 pb-4 border-t border-gray-100 pt-4" id="mobile-menu">
+                <div class="space-y-1">
+                    <a href="index.html" class="block py-2 px-3 text-gray-900 bg-gray-100 rounded-lg font-medium">Home</a>
+                    <a href="pricing.html" class="block py-2 px-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">Pricing</a>
+                    <a href="about.html" class="block py-2 px-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">About</a>
+                    <a href="book.html" class="block py-2 px-3 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">Contact</a>
+                    <hr class="my-2">
+                    <a href="privacy.html" class="block py-2 px-3 text-gray-600 hover:bg-gray-100 rounded-lg">Privacy</a>
+                    <a href="terms.html" class="block py-2 px-3 text-gray-600 hover:bg-gray-100 rounded-lg">Terms</a>
+                    <hr class="my-2">
+                    <a href="book.html" class="block py-2 px-3 bg-primary-600 text-white text-center rounded-lg font-semibold">Start Free Trial</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-20 pb-32 px-6 relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fade-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-8">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+                        AI-Powered SEO Analysis
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
+                        Find the keywords
+                        <span class="gradient-text">you're missing</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+                        Kimidly analyzes your content against top competitors to reveal keyword gaps, content opportunities, and actionable insights—powered by advanced AI.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="book.html" class="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition shadow-xl shadow-primary-500/25 text-center flex items-center justify-center gap-2">
+                            Start Free Trial
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </a>
+                        <a href="#how-it-works" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:border-gray-400 transition text-center">
+                            See How It Works
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-6 text-sm text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>14-day free trial</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>No credit card required</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>Cancel anytime</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative animate-float hidden lg:block">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-6">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                            <span class="text-xs text-gray-400 ml-2">kimidly.net/dashboard</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Kimidly Dashboard" class="rounded-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="py-12 px-6 border-y border-gray-200 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <p class="text-sm text-gray-500 uppercase tracking-wide font-semibold mb-2">Trusted by 500+ marketing teams</p>
+                    <div class="flex items-center justify-center md:justify-start gap-1">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-sm text-gray-600 ml-2">4.8/5 from 200+ reviews</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                    <div class="text-xl font-bold text-gray-300 hover:text-gray-400 transition">TechFlow</div>
+                    <div class="text-xl font-bold text-gray-300 hover:text-gray-400 transition">StyleHub</div>
+                    <div class="text-xl font-bold text-gray-300 hover:text-gray-400 transition">CloudScale</div>
+                    <div class="text-xl font-bold text-gray-300 hover:text-gray-400 transition">DataViz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">The Challenge</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">SEO shouldn't feel like guesswork</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Most marketers struggle with the same problems. We built Kimidly to solve them.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-eye-slash text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Invisible Opportunities</h3>
+                    <p class="text-gray-600 leading-relaxed">You're ranking for some keywords, but have no idea which high-value terms you're completely missing out on.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-hourglass-half text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Manual Analysis Hell</h3>
+                    <p class="text-gray-600 leading-relaxed">Hours spent in spreadsheets comparing competitors, just to end up with incomplete and outdated data.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chess text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Competitor Blindness</h3>
+                    <p class="text-gray-600 leading-relaxed">Your competitors keep outranking you, but you can't figure out what they're doing differently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-24 px-6 mesh-gradient">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">The Solution</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">AI that thinks like your best SEO analyst</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Kimidly uses advanced machine learning to analyze your content, understand your market, and deliver insights that would take a human analyst weeks to compile.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">Keyword Gap Detection</strong>
+                                <p class="text-gray-600 mt-1">Discover exactly which keywords your competitors rank for that you don't.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">Content Opportunity Mapping</strong>
+                                <p class="text-gray-600 mt-1">See which topics and content types are driving traffic for your competitors.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div>
+                                <strong class="text-gray-900">Prioritized Action Plans</strong>
+                                <p class="text-gray-600 mt-1">Get recommendations sorted by impact and difficulty, so you know what to tackle first.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-primary-50 to-purple-50 rounded-xl">
+                                <div>
+                                    <p class="text-sm text-gray-500">Missing Keywords</p>
+                                    <p class="text-3xl font-bold text-gray-900">247</p>
+                                </div>
+                                <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-search text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl">
+                                <div>
+                                    <p class="text-sm text-gray-500">Content Gaps</p>
+                                    <p class="text-3xl font-bold text-gray-900">89</p>
+                                </div>
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl">
+                                <div>
+                                    <p class="text-sm text-gray-500">Est. Traffic Gain</p>
+                                    <p class="text-3xl font-bold text-gray-900">+42%</p>
+                                </div>
+                                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 text-center mt-6">Sample analysis from a real customer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">How It Works</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Three steps to SEO clarity</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    No technical expertise required. Get actionable insights in minutes.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="hidden md:block absolute top-24 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-primary-200 via-primary-400 to-primary-200"></div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 bg-primary-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-primary-500/25 relative z-10">1</div>
+                    <h3 class="text-xl font-bold mb-3">Connect Your Site</h3>
+                    <p class="text-gray-600">Enter your URL or upload your sitemap. We'll automatically crawl and analyze your content structure.</p>
+                </div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 bg-primary-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-primary-500/25 relative z-10">2</div>
+                    <h3 class="text-xl font-bold mb-3">AI Analysis</h3>
+                    <p class="text-gray-600">Our AI compares your content against top competitors and identifies gaps in your keyword strategy.</p>
+                </div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 bg-primary-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-primary-500/25 relative z-10">3</div>
+                    <h3 class="text-xl font-bold mb-3">Get Your Report</h3>
+                    <p class="text-gray-600">Receive prioritized recommendations you can act on immediately to improve your rankings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">Features</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Everything you need to dominate SEO</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">AI-Powered Analysis</h3>
+                    <p class="text-gray-600 text-sm">Advanced NLP models trained on millions of successful SEO campaigns.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-search-plus text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Keyword Gap Detection</h3>
+                    <p class="text-gray-600 text-sm">Find the exact keywords your competitors rank for that you're missing.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-bar text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Competitor Tracking</h3>
+                    <p class="text-gray-600 text-sm">Monitor up to 10 competitors and track their ranking changes over time.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-export text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Export Reports</h3>
+                    <p class="text-gray-600 text-sm">Download detailed reports in PDF or CSV format for your team.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-bell text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Ranking Alerts</h3>
+                    <p class="text-gray-600 text-sm">Get notified when your rankings change or competitors make moves.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Expert Support</h3>
+                    <p class="text-gray-600 text-sm">Work with SEO experts who help you understand and act on insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">Testimonials</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Loved by marketing teams</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        "We found 50+ missing keywords in our first analysis. Our organic traffic increased 40% in three months. This tool paid for itself in the first week."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?img=47" alt="Sarah Mitchell" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-bold text-gray-900">Sarah Mitchell</p>
+                            <p class="text-sm text-gray-500">Head of Marketing, TechFlow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        "The competitor analysis feature is incredible. We finally understand why our competitors were outranking us—and now we're catching up fast."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?img=33" alt="James Chen" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-bold text-gray-900">James Chen</p>
+                            <p class="text-sm text-gray-500">E-commerce Director, StyleHub</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        "Kimidly saves us at least 10 hours per week on SEO research. The prioritized recommendations make it easy to know what to work on next."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?img=20" alt="Maria Rodriguez" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-bold text-gray-900">Maria Rodriguez</p>
+                            <p class="text-sm text-gray-500">SEO Manager, CloudScale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <p class="text-primary-600 font-semibold uppercase tracking-wide mb-4">FAQ</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Common questions</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="bg-white rounded-2xl border border-gray-200 p-6 group">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-lg font-bold text-gray-900">How accurate is the AI analysis?</h3>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Our AI engine achieves 85%+ accuracy compared to manual analysis. It's trained on millions of successful SEO campaigns and continuously improves based on real-world results.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-gray-200 p-6 group">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-lg font-bold text-gray-900">What data do you need from me?</h3>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Just your website URL. We analyze publicly available data only. No need to connect Google Analytics, Search Console, or share any credentials.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-gray-200 p-6 group">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-lg font-bold text-gray-900">How long does an analysis take?</h3>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Most analyses complete in 15-30 minutes. Larger sites (1000+ pages) may take up to 2 hours. You'll receive an email when your report is ready.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-gray-200 p-6 group">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-lg font-bold text-gray-900">Is there a free trial?</h3>
+                        <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes! We offer a 14-day free trial with full access to all features. No credit card required. Cancel anytime.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-gradient-to-br from-primary-600 via-primary-700 to-purple-700 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+        <div class="container mx-auto max-w-4xl text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to find your SEO gaps?</h2>
+            <p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
+                Join 500+ marketing teams who are discovering hidden opportunities and outranking their competitors.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="book.html" class="bg-white text-primary-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition shadow-xl flex items-center justify-center gap-2">
+                    Start Free Trial
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                </a>
+                <a href="book.html" class="border-2 border-white/50 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition">
+                    Book a Demo
+                </a>
+            </div>
+            <p class="text-sm text-primary-200 mt-6">14-day free trial • No credit card required</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-5 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Kimidly</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-xs">AI-powered SEO gap analysis for modern marketing teams. Find what you're missing.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-twitter text-gray-400"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-linkedin-in text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="book.html" class="hover:text-white transition">Book Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="book.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="imprint.html" class="hover:text-white transition">Imprint</a></li>
+                        <li><a href="cookies.html" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-500">&copy; 2025 Kimidly LLC. All rights reserved.</p>
+                <p class="text-sm text-gray-500">Made with ❤️ for marketers worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
