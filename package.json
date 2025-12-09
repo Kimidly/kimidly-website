@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Kimidly - AI-powered SEO gap analysis",
   "scripts": {
-    "build": "echo 'Static site - no build required'",
-    "start": "npx serve ."
+    "build": "mkdir -p dist && cp -r *.html *.xml *.txt .htaccess dist/ 2>/dev/null || true",
+    "start": "npx serve dist"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["seo", "ai", "saas"],
   "author": "Kimidly LLC",
   "license": "MIT"
 }
-
