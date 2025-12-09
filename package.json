@@ -1,0 +1,13 @@
+{
+  "name": "kimidly-website",
+  "version": "1.0.0",
+  "description": "Kimidly - AI-powered SEO gap analysis",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "npx serve ."
+  },
+  "keywords": ["seo", "ai", "saas"],
+  "author": "Kimidly LLC",
+  "license": "MIT"
+}
+
